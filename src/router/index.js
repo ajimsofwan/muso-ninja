@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/auth/Login.vue";
 import Register from "../views/auth/Register.vue";
+import CreatePlaylist from "../views/playlists/CreatePlaylist.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -19,6 +20,11 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/playlists/create",
+    name: "CreatePlaylist",
+    component: CreatePlaylist,
   },
   {
     path: "/:catchAll(.*)",

@@ -6,7 +6,6 @@ import getUser from '../composables/getUser'
 const { signOut, isPending } = useSignOut()
 const { user } = getUser()
 
-console.log(user)
 const handleLogout = async () => {
   await signOut()
 }

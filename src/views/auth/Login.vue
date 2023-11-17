@@ -20,8 +20,9 @@ const handleSubmit = async () => {
 
 <template>
   <div class="max-w-md py-10 mx-auto text-left">
-    <h1 class="py-4 text-3xl font-bold text-center">Sign In</h1>
     <div class="p-6 bg-white border shadow border-slate-200 rounded-2xl dark:bg-slate-800 dark:border-slate-700">
+      <h1 class="py-2 text-2xl font-bold">Sign In</h1>
+      <p class="mb-4 text-slate-500">Sign in to musho ninjas...</p>
       <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-xl bg-red-50 dark:bg-slate-800 dark:text-red-400"
         role="alert">
         <span class="font-medium">Oops!</span> {{ error }}
@@ -45,8 +46,9 @@ const handleSubmit = async () => {
           <span v-if="isPending">Processing ...</span>
           <span v-else>Sign In</span>
         </button>
-        <div class="py-5">Have an account? <span class="font-semibold cursor-pointer hover:border-b border-slate-700"
-            @click="emit('show')">Sign Up</span>
+        <div class="py-5">Have an account? <router-link :to="{ name: 'Register' }"
+            class="font-semibold cursor-pointer hover:border-b border-slate-700" @click="emit('show')">Sign
+            Up</router-link>
         </div>
       </form>
     </div>
