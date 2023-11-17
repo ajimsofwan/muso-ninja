@@ -9,6 +9,7 @@ const signOut = async () => {
   isPending.value = true;
   try {
     await auth.signOut();
+    console.log("user signout");
   } catch (err) {
     console.log(err.message);
     error.value = err.message;
