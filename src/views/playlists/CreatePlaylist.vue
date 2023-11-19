@@ -26,7 +26,7 @@ const handleSubmit = async () => {
       description: description.value,
       userId: user.value.uid,
       username: user.value.displayName,
-      converUrl: url.value,
+      coverUrl: url.value,
       filePath: filePath.value,
       songs: [],
       createdAt: timestamp()
