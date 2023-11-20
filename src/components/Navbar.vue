@@ -21,12 +21,16 @@ const handleLogout = async () => {
               class="text-primary">Ninja</span></router-link></h1>
       </div>
       <div>
-        <ul class="flex flex-wrap">
-          <li v-if="!user" class="px-2 py-6 hover:bg-slate-100"><router-link
-              :to="{ name: 'Register' }">Register</router-link></li>
-          <li v-if="!user" class="px-2 py-6 hover:bg-slate-100"><router-link :to="{ name: 'Login' }">Login</router-link>
+        <ul v-if="!user" class="flex flex-wrap">
+          <li class="px-2 py-6 hover:bg-slate-100"><router-link :to="{ name: 'Register' }">Register</router-link></li>
+          <li class="px-2 py-6 hover:bg-slate-100"><router-link :to="{ name: 'Login' }">Login</router-link>
           </li>
-          <li v-if="user" class="px-2 py-6 hover:bg-slate-100"><button @click="handleLogout">Logout</button></li>
+        </ul>
+        <ul v-if="user" class="flex flex-wrap">
+          <li class="px-2 py-6 hover:bg-slate-100"><router-link :to="{ name: 'CreatePlaylist' }">Create
+              Playlist</router-link>
+          </li>
+          <li class="px-2 py-6 hover:bg-slate-100"><button @click="handleLogout">Logout</button></li>
         </ul>
       </div>
     </nav>

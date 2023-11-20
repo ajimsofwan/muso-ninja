@@ -5,7 +5,9 @@ import useStorage from '../../composables/useStorage'
 import useCollection from '../../composables/useCollection'
 import getUser from '../../composables/getUser'
 import { timestamp } from '../../firebase/config'
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
 const emit = defineEmits(['show', 'signin'])
 const title = ref('')
 const description = ref('')
@@ -35,6 +37,7 @@ const handleSubmit = async () => {
       console.log('playlist added')
     }
     isPending.value = false
+    router.push({ name: 'Home' })
   } else {
     error.value = 'Image cover required'
   }

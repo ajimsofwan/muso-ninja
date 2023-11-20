@@ -12,13 +12,6 @@ const { documents, error } = getCollection('playlists')
     <span class="font-medium">Oops!</span> {{ error }}
   </div>
   <div v-if="documents">
-    <!-- <div v-for="doc in documents" :key="doc.id">
-      <div><img src="" alt=""></div>
-      <span>
-        {{ doc.title }}
-      </span>
-      <span>{{ doc.description }}</span>
-    </div> -->
     <ListView :playlists="documents" />
   </div>
 </template>
