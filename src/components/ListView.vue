@@ -7,8 +7,9 @@ console.log(props.playlists)
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-4 py-6">
-    <div v-for="playlist in playlists" :key="playlist.title"
+  <div class="grid gap-4 py-6 lg:grid-cols-2">
+    <router-link v-for="playlist in playlists" :key="playlist.id"
+      :to="{ name: 'PlaylistDetails', params: { id: playlist.id } }"
       class="flex items-center justify-between p-6 space-x-6 duration-200 bg-white border shadow ease border-slate-200 rounded-2xl dark:bg-slate-800 dark:border-slate-700 hover:scale-[1.02]">
       <div class="flex-none">
         <img :src="playlist.coverUrl" :alt="playlist.id" class="w-40 rounded-lg">
@@ -18,6 +19,6 @@ console.log(props.playlists)
         <span class="text-xl">Created by {{ playlist.username }}</span>
       </div>
       <div class="flex-none"><span class="text-4xl font-bold">{{ playlist.songs.length }}</span></div>
-    </div>
+    </router-link>
   </div>
 </template>

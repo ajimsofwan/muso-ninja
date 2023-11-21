@@ -23,7 +23,7 @@ const handleSubmit = async () => {
   if (file.value) {
     isPending.value = true
     await uploadImage(file.value)
-    await addDoc({
+    const res = await addDoc({
       title: title.value,
       description: description.value,
       userId: user.value.uid,
@@ -37,7 +37,7 @@ const handleSubmit = async () => {
       console.log('playlist added')
     }
     isPending.value = false
-    router.push({ name: 'Home' })
+    router.push({ name: 'PlaylistDetails', params: { id: res.id } })
   } else {
     error.value = 'Image cover required'
   }
