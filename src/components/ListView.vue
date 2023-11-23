@@ -3,7 +3,6 @@ import { ref } from 'vue';
 
 const props = defineProps(['playlists'])
 
-console.log(props.playlists)
 </script>
 
 <template>
