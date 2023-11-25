@@ -1,7 +1,20 @@
-# Vue 3 + Vite
+# Song Playlist App
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a Song Playlist app built using Vue.js and Vite, with Firebase Firestore for the database and Firebase Storage for file storage.
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Add Songs:** Users can add their favorite songs to the playlist.
+- **Delete Songs:** Remove unwanted songs from the playlist.
+- **Firebase Integration:** Utilizes Firebase Firestore for database storage and Firebase Storage for file storage.
+
+## Technologies Used
+
+- Vue.js
+- Vite
+- Firebase Firestore
+- Firebase Storage
+
+## Demo
+
+You see the demo using this link [https://musoninjas-ca821.web.app/](https://musoninjas-ca821.web.app/).
