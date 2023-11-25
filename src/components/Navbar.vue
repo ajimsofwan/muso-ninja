@@ -17,8 +17,8 @@ const handleLogout = async () => {
     <nav class="flex items-center justify-between px-4 mx-auto max-w-screen-2xl">
       <div class="flex flex-wrap items-center">
         <img src="../assets/img/ninja-musho.png" alt="logo" class="h-auto mr-2 w-14">
-        <h1 class="text-3xl font-bold"><router-link :to="{ name: 'Home' }">Musho<span
-              class="text-primary">Ninja</span></router-link></h1>
+        <h1 class="text-3xl font-bold"><router-link :to="{ name: 'Home' }">Ninja<span
+              class="text-primary">Playlists</span></router-link></h1>
       </div>
       <div>
         <ul v-if="!user" class="flex flex-wrap">
