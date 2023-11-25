@@ -25,7 +25,7 @@ const handleSubmit = async () => {
       <p class="mb-4 text-slate-500">Sign in to musho ninjas...</p>
       <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-xl bg-red-50 dark:bg-slate-800 dark:text-red-400"
         role="alert">
-        <span class="font-medium">Oops!</span> {{ error }}
+        <span class="font-bold">Oops!</span> {{ error }}
       </div>
       <form @submit.prevent="handleSubmit">
         <div class="mb-6">

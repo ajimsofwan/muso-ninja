@@ -7,6 +7,21 @@ const useDocument = (collection, id) => {
 
   const docRef = firestore.collection(collection).doc(id);
 
+  const updateDoc = async (updates) => {
+    isPending.value = true;
+    error.value = null;
+
+    try {
+      const res = await docRef.update(updates);
+      return res;
+    } catch (err) {
+      console.log(err.message);
+      error.value = "Couldn't update the document";
+    } finally {
+      isPending.value = false;
+    }
+  };
+
   const deleteDoc = async () => {
     isPending.value = true;
     error.value = null;
@@ -17,10 +32,12 @@ const useDocument = (collection, id) => {
     } catch (err) {
       console.log(err.message);
       error.value = "Couldn't delete the document";
+    } finally {
+      isPending.value = false;
     }
   };
 
-  return { deleteDoc, isPending, error };
+  return { updateDoc, deleteDoc, isPending, error };
 };
 
 export default useDocument;

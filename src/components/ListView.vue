@@ -17,7 +17,9 @@ const props = defineProps(['playlists'])
         <h3 class="text-4xl font-bold">{{ playlist.title }}</h3>
         <span class="text-xl">Created by {{ playlist.username }}</span>
       </div>
-      <div class="flex-none"><span class="text-4xl font-bold">{{ playlist.songs.length }}</span></div>
+      <div class="flex-none"><span class="px-4 py-1 mr-5 text-3xl font-bold rounded-full text-slate-600 bg-slate-300">{{
+        playlist.songs.length
+      }}</span></div>
     </router-link>
   </div>
 </template>

@@ -60,15 +60,14 @@ const handleChange = (e) => {
 <template>
   <div class="max-w-md py-10 mx-auto text-left">
     <div class="p-6 bg-white border shadow border-slate-200 rounded-2xl dark:bg-slate-800 dark:border-slate-700">
-      <h1 class="py-2 text-2xl font-bold">Sign In</h1>
-      <p class="mb-4 text-slate-500">Sign in to musho ninjas...</p>
+      <h1 class="py-2 mb-5 text-2xl font-bold">Create Playlist</h1>
       <div v-if="error" class="p-4 mb-4 text-sm text-red-800 rounded-xl bg-red-50 dark:bg-slate-800 dark:text-red-400"
         role="alert">
-        <span class="font-medium">Oops!</span> {{ error }}
+        <span class="font-bold">Oops!</span> {{ error }}
       </div>
       <div v-if="fileError" class="p-4 mb-4 text-sm text-red-800 rounded-xl bg-red-50 dark:bg-slate-800 dark:text-red-400"
         role="alert">
-        <span class="font-medium">Oops!</span> {{ fileError }}
+        <span class="font-bold">Oops!</span> {{ fileError }}
       </div>
       <form @submit.prevent="handleSubmit">
         <div class="mb-6">

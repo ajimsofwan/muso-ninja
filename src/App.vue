@@ -6,7 +6,7 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <Navbar />
-  <section class="px-5 py-10 text-center">
+  <section class="px-5 py-10 text-center xl:mx-20 2xl:mx-40">
     <router-view />
   </section>
 </template>
