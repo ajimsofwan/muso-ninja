@@ -2,6 +2,8 @@
 
 This is a Song Playlist app built using Vue.js and Vite, with Firebase Firestore for the database and Firebase Storage for file storage.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - **Add Songs:** Users can add their favorite songs to the playlist.
