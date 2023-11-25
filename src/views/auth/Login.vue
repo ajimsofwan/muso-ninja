@@ -4,7 +4,6 @@ import useSignIn from '../../composables/useSignIn';
 import LoadingIcon from '../../components/LoadingIcon.vue';
 import { useRouter } from 'vue-router';
 
-// const emit = defineEmits(['show', 'signin'])
 const { signIn, isPending, error } = useSignIn()
 const router = useRouter()
 
@@ -14,7 +13,6 @@ const password = ref('')
 const handleSubmit = async () => {
   await signIn(email.value, password.value)
   if (!error.value) {
-    // emit('signin')
     router.push({ name: "Home" })
   }
 }

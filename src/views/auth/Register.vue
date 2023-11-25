@@ -4,7 +4,6 @@ import useSignUp from '../../composables/useSignUp';
 import LoadingIcon from '../../components/LoadingIcon.vue';
 import { useRouter } from 'vue-router';
 
-// const emit = defineEmits(['show', 'signup'])
 const { signUp, isPending, error } = useSignUp()
 const router = useRouter()
 
@@ -15,8 +14,7 @@ const password = ref('')
 const handleSubmit = async () => {
   await signUp(email.value, password.value, displayName.value)
   if (!error.value) {
-    // emit('signup')
-    router.push({ name: "Home" })
+    router.push({ name: "UserPlaylist" })
   }
 }
 

@@ -1,15 +1,22 @@
 <script setup>
-import { ref } from 'vue';
+import { watch } from 'vue';
 import useSignOut from '../composables/useSignOut'
 import getUser from '../composables/getUser'
+import { useRouter } from 'vue-router';
 
-const { signOut, isPending } = useSignOut()
+const { signOut } = useSignOut()
 const { user } = getUser()
+const router = useRouter()
 
 const handleLogout = async () => {
   await signOut()
 }
 
+watch(user, () => {
+  if (!user.value) {
+    router.push({ name: 'Login' })
+  }
+})
 </script>
 
 <template>
@@ -27,8 +34,11 @@ const handleLogout = async () => {
           </li>
         </ul>
         <ul v-if="user" class="flex flex-wrap">
-          <li class="px-2 py-6 hover:bg-slate-100"><router-link :to="{ name: 'CreatePlaylist' }">Create
-              Playlist</router-link>
+          <li class="px-2 py-6 hover:bg-slate-100">
+            <router-link :to="{ name: 'CreatePlaylist' }">Create Playlist</router-link>
+          </li>
+          <li class="px-2 py-6 hover:bg-slate-100">
+            <router-link :to="{ name: 'UserPlaylist' }">MyPlaylist</router-link>
           </li>
           <li class="px-2 py-6 hover:bg-slate-100"><button @click="handleLogout">Logout</button></li>
         </ul>
