@@ -40,6 +40,9 @@ watch(user, () => {
           <li class="px-2 py-6 hover:bg-slate-100">
             <router-link :to="{ name: 'UserPlaylist' }">MyPlaylist</router-link>
           </li>
+          <li class="px-2 py-6 hover:bg-slate-100">
+            <span>Hi there, {{ user.displayName }}</span>
+          </li>
           <li class="px-2 py-6 hover:bg-slate-100"><button @click="handleLogout">Logout</button></li>
         </ul>
       </div>
