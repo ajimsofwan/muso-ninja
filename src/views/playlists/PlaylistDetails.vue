@@ -10,7 +10,7 @@ import AddSong from '../../components/AddSong.vue';
 const props = defineProps(['id'])
 const { document: playlist, error } = getDocument('playlists', props.id)
 const { user } = getUser()
-const { deleteDoc, isPending } = useDocument('playlists', props.id)
+const { updateDoc, deleteDoc, isPending } = useDocument('playlists', props.id)
 const { deleteImage } = useStorage()
 const router = useRouter()
 
@@ -23,6 +23,12 @@ const handleDelete = async () => {
   await deleteDoc()
   router.push({ name: 'Home' })
 }
+
+const handleClick = async (id) => {
+  const songs = playlist.value.songs.filter((song) => song.id != id)
+  await updateDoc({ songs })
+}
+
 </script>
 
 <template>
@@ -57,9 +63,8 @@ const handleDelete = async () => {
             <h3 class="text-xl">{{ song.title }}</h3>
             <p class="text-slate-500">{{ song.artist }}</p>
           </div>
-
           <div>
-            <button v-if="ownership" type="submit" @click="showForm = true"
+            <button v-if="ownership" type="submit" @click="handleClick(song.id)"
               class="flex flex-wrap justify-center w-full px-5 py-1 text-sm font-medium text-center text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-light rounded-xl disabled:bg-primary-light">
               delete
             </button>
